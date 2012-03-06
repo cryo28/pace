@@ -17,7 +17,7 @@ module Pace
 
       def expand_name(queue)
         parts = [queue]
-        parts.unshift("resque:queue") unless queue.index(":")
+        parts.unshift("queue") unless queue.index(":")
         parts.unshift(Pace.namespace) unless Pace.namespace.nil?
         parts.join(":")
       end
